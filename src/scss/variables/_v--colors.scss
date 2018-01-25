@@ -1,0 +1,32 @@
+//----- Variables / Colors
+
+$color-white                : #fff;
+$color-alabaster            : #fafafa;
+$color-gallery              : #f0f0f0;
+$color-gray-light           : #e5e5e5;
+$color-dusty-gray           : #999999;
+$color-black                : #000;
+$color-abbey                : #0d0d0d;
+$color-cod-gray             : #111111;
+
+
+$colors           : (
+  buttons         : ( //----- Buttons colors
+    primary       : $color-black,
+    secondary     : $color-white
+  )
+);
+
+// //----- Variables used in the @for loop for different brand colors
+// // Example... Socials
+// $buttonsArray  : facebook, fb-messenger, twitter, youtube, viber, whatsapp;
+// $buttonsLength : length($buttonsArray) + 1;
+// // In scss file
+// .c-btn {
+//     @for $soc from 1 to $buttonsLength {
+//         $currentButton : nth($buttonsArray, $soc);
+//         &--#{$currentButton} { // color
+//             color: colorFunc(socials, $currentButton);
+//         }
+//     }
+// }
