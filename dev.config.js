@@ -39,8 +39,7 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: 'assets/fonts/',
-                        emitFile: false
+                        outputPath: 'assets/fonts/'
                     }
                 }
             },
@@ -52,8 +51,16 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: 'assets/img/',
-                        emitFile: false
+                        outputPath: 'assets/img/'
+                    }
+                }
+            },
+            {
+                test: /\.html$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        minimize: false
                     }
                 }
             }
