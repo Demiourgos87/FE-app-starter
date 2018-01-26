@@ -36,7 +36,7 @@ module.exports = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
-                exclude: /node_modules/,
+                exclude: /(node_modules|img)/,
                 use: {
                     loader: 'file-loader',
                     options: {
@@ -46,8 +46,8 @@ module.exports = {
                 }
             },
             {
-                test: /\.(jpe?g|png|gif)$/,
-                exclude: /node_modules/,
+                test: /\.(jpe?g|png|gif|svg)$/,
+                exclude: /(node_modules|fonts)/,
                 use: {
                     loader: 'file-loader',
                     options: {
