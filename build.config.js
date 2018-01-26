@@ -62,7 +62,7 @@ module.exports = {
                     loader: 'html-loader',
                     options: {
                         minimize: false,
-                        attrs: ['img:src', 'source:srcset']
+                        attrs: ['img:src', 'source:srcset', 'img:srcset']
                     }
                 }
             }
