@@ -31,7 +31,7 @@ module.exports = {
                     { loader: 'sass-loader', options: { sourceMap: true } }
                 ]
             },
-            // ----- Fonts loading
+            // ----- Font loading
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 exclude: /(node_modules|bower_components)/,
@@ -44,6 +44,7 @@ module.exports = {
                     }
                 }
             },
+            // ----- Image loading
             {
                 test: /\.(jpe?g|png|gif)$/,
                 exclude: /node_modules/,
@@ -73,7 +74,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackHarddiskPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Diwanee',
+            title: 'Webpack App',
             filename: 'index.html',
             template: './src/index.html',
             alwaysWriteToDisk: true
