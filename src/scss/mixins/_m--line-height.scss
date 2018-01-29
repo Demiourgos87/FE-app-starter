@@ -2,11 +2,14 @@
 
 // Example @include line-height(10px, 30px);
 // rem Line-Height
-@mixin line-height($fz-phone, $fz-desktop) {
-  @include breakpoint(overPhone) {
-    line-height: cr($fz-desktop);
-  }
-  @include breakpoint(phone) {
-    line-height: cr($fz-phone);
-  }
+@mixin line-height($fz-phone, $fz-tablet, $fz-desktop) {
+    @include breakpoint(phone) {
+        line-height: cr($fz-phone);
+    }
+    @include breakpoint(overPhone) {
+        line-height: cr($fz-tablet);
+    }
+    @include breakpoint(desktop) {
+        line-height: cr($fz-desktop)
+    }
 }

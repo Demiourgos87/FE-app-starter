@@ -524,12 +524,15 @@ a img, button {
 
 html {
   font-size: 10px; }
-  @media (max-width: 1440px) {
-    html {
-      font-size: 0.69444vw; } }
   @media (max-width: 767px) {
     html {
-      font-size: 3.125vw; } }
+      font-size: 1.33333vw; } }
+  @media (min-width: 768px) {
+    html {
+      font-size: 1.30208vw; } }
+  @media (min-width: 1025px) {
+    html {
+      font-size: 0.69444vw; } }
 
 body {
   font-family: Arial, sans-serif;
