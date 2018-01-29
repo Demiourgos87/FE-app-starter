@@ -26,4 +26,7 @@
     @include breakpoint(desktop){
         font-size: cvw($fz-desktop, $site-desk-design);
     }
+    @include breakpoint(overDesign) {
+        font-size: $fz-desktop;
+    }
 }

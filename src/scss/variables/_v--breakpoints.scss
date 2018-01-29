@@ -32,6 +32,5 @@ $breakpoints        : (
   'toDesktop'       : '(#{$max}: #{$toDesktop})',
   'desktop'         : '(#{$min}: #{$desktop})',
   'siteMaxWidth'    : '(#{$max}: #{$siteMaxWidth})',
-  'fullHD'  		: '(#{$min}: #{$fullHD})',
-  'over1280'  		: '(#{$min}: 1280px)'
+  'overDesign'      : '(#{$min}: #{$siteMaxWidth})'
 );
