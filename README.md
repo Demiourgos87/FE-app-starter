@@ -14,8 +14,8 @@ Install webpack cli globally on your machine ```yarn add webpack``` (on Linux, m
 * Images: *src/assets/images/*
 
 ### Compilation paths:
-* CSS (master.css) is compiled to: *dist/css/*
-* Javascript (master.js) is compiled to: *dist/js/*
+* CSS is compiled to: *dist/css/*
+* Javascript is compiled to: *dist/js/*
 
 ## Project setup:
 * Define design specific dimensions variables at *src/scss/variables/_v--dimensions.scss*
