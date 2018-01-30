@@ -533,6 +533,9 @@ html {
   @media (min-width: 1025px) {
     html {
       font-size: 0.69444vw; } }
+  @media (min-width: 1440px) {
+    html {
+      font-size: 10px; } }
 
 body {
   font-family: Arial, sans-serif;

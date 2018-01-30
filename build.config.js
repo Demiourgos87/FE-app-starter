@@ -1,4 +1,5 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin'),
+var webpack = require('webpack'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     path = require('path');
@@ -69,6 +70,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest'
+        }),
         new CleanWebpackPlugin(['dist/*']),
         new ExtractTextPlugin(cssOutput),
         new HtmlWebpackPlugin({
