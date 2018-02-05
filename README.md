@@ -35,3 +35,10 @@ If working on Linux or Mac, in order to simplify the commands, you can add an al
 At the end of the file, add ```alias dev='yarn run dev'```. Restart the terminal, and now you can type only ```dev``` in the project folder, to start the webpack dev server. If needed, create aliases for build and production commands as well.
 
 **Note: Make sure you don't name your alias the same as some other system command, and that it does not conflict with other alias names.**
+
+## Bundle analysis
+A tool for bundle analysis, provides useful information about the state of the bundle, errors, warnings, module interconnectivity, etc.
+
+1. Generate webpack stats file, from project root enter ```webpack --profile --json --config=config/build.config.js > stats.json```
+2. Go to: [http://webpack.github.io/analyse/](http://webpack.github.io/analyse/)
+3. Upload the generated stats.json file
