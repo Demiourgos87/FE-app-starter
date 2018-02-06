@@ -71,7 +71,27 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest'
+            name: 'vendor',
+            minChunks(module) {
+                // any required modules inside node_modules are extracted to vendor
+                return (
+                    module.resource &&
+                    /\.js$/.test(module.resource) &&
+                    module.resource.indexOf(
+                        path.join(__dirname, 'node_modules')
+                    ) === 0
+                )
+            }
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',
+            minChunks: Infinity
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'app',
+            async: 'vendor-async',
+            children: true,
+            minChunks: 3
         }),
         new CleanWebpackPlugin(['dist/*']),
         new ExtractTextPlugin(cssOutput),
