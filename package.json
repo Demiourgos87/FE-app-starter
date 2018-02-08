@@ -4,7 +4,7 @@
   "description": "Webpack FrontEnd boilerplate using yarn",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server -d --config=dev.config.js",
+    "dev": "webpack-dev-server --config=dev.config.js",
     "build": "webpack --config=build.config.js",
     "prod": "webpack -p --config=build.config.js"
   },

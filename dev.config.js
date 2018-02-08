@@ -1,4 +1,5 @@
 var webpack = require('webpack'),
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
     WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin'),
@@ -9,7 +10,7 @@ module.exports = {
         app: './src/js/app.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist/'),
         filename: '[name].bundle.js'
     },
     devtool: 'source-map',
@@ -25,11 +26,21 @@ module.exports = {
             // ----- SASS compiling
             {
                 test: /\.scss$/,
-                use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader', options: { sourceMap: true } },
-                    { loader: 'sass-loader', options: { sourceMap: true } }
-                ]
+                use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [
+                        { loader: "css-loader", options: { sourceMap: true, url: false } },
+                        { loader: "postcss-loader", options: { sourceMap: true } },
+                        {
+                            loader: "sass-loader",
+                            options: {
+                                sourceMap: true,
+                                outputStyle: "expanded",
+                                sourceMapContents: true
+                            }
+                        }
+                    ]
+                }))
             },
             // ----- Font loading
             {
@@ -74,17 +85,25 @@ module.exports = {
         hot: true,
         compress: true,
         port: 3300,
-        stats: 'errors-only',
+        stats: {
+            all: false,
+            errors: true,
+            warnings: true
+        },
         open: true
     },
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new ExtractTextPlugin({
+            filename: 'css/style.css',
+            allChunks: true
+        }),
         new HtmlWebpackHarddiskPlugin(),
         new HtmlWebpackPlugin({
             title: 'Webpack App',
             filename: 'index.html',
-            template: './src/index.html',
+            template: 'src/index.html',
             alwaysWriteToDisk: true
         }),
         new WebpackBuildNotifierPlugin({
