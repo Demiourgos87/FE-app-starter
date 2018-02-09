@@ -10,7 +10,7 @@ module.exports = {
         app: './src/js/app.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist/'),
+        path: path.resolve(__dirname, '../dist/'),
         filename: '[name].bundle.js'
     },
     devtool: 'source-map',
@@ -30,7 +30,6 @@ module.exports = {
                     fallback: "style-loader",
                     use: [
                         { loader: "css-loader", options: { sourceMap: true, url: false } },
-                        { loader: "postcss-loader", options: { sourceMap: true } },
                         {
                             loader: "sass-loader",
                             options: {
@@ -80,7 +79,7 @@ module.exports = {
     },
     // ----- Webpack dev server options
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, '../dist/'),
         watchContentBase: true,
         hot: true,
         compress: true,

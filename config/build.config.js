@@ -5,7 +5,7 @@ var webpack = require('webpack'),
     path = require('path');
 
 // ----- Output file paths
-var outputDir = 'dist/',
+var outputDir = '../dist/',
     cssOutput = 'css/style.[chunkhash:8].css',
     jsOutput = 'js/[name].[chunkhash:8].bundle.js';
 
@@ -31,7 +31,18 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: [ 'css-loader', 'postcss-loader', 'sass-loader'],
+                    use: [
+                        { loader: 'css-loader' },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                config: {
+                                    path: './config/postcss.config.js'
+                                }
+                            }
+                        },
+                        'sass-loader'
+                    ],
                     publicPath: '../'
                 })
             },
@@ -93,7 +104,9 @@ module.exports = {
             children: true,
             minChunks: 3
         }),
-        new CleanWebpackPlugin(['dist/*']),
+        new CleanWebpackPlugin(['dist/*'], {
+            root: path.resolve(__dirname + '/../')
+        }),
         new ExtractTextPlugin(cssOutput),
         new HtmlWebpackPlugin({
             title: 'Webpack App',

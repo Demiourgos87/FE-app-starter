@@ -4,9 +4,9 @@
   "description": "Webpack FrontEnd boilerplate using yarn",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config=dev.config.js",
-    "build": "webpack --config=build.config.js",
-    "prod": "webpack -p --config=build.config.js"
+    "dev": "webpack-dev-server --progress --config=config/dev.config.js",
+    "build": "webpack --progress --colors --config=config/build.config.js",
+    "prod": "webpack -p --progress --colors --config=config/build.config.js"
   },
   "author": "Bojan Knezevic",
   "license": "MIT",
