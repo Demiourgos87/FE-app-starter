@@ -17,6 +17,9 @@ vendor/
 .settings
 .idea
 
+# Stats file for bundle analysis
+stats.json
+
 # Uncomment lines below when multiple people working on same project
 # dist/css/style.css
 # dist/js/*.js

@@ -14,8 +14,8 @@ Install **yarn:** [Installation instructions](https://yarnpkg.com/en/docs/instal
 * Images: *src/assets/images/*
 
 ### Compilation paths:
-* CSS is compiled to: *dist/css/*
-* Javascript is compiled to: *dist/js/*
+* CSS is bundled to: *dist/css/*
+* Javascript is bundled to: *dist/js/*
 
 ## Project setup:
 * Define design specific dimensions variables at *src/scss/variables/_v--dimensions.scss*
@@ -26,7 +26,7 @@ Install **yarn:** [Installation instructions](https://yarnpkg.com/en/docs/instal
 
 ### Commands:
 * ```yarn run dev``` - Runs webpack dev server for development mode
-* ```yarn run build``` - Bundle source code
+* ```yarn run build``` - Bundle source code into dist/ directory
 * ```yarn run prod``` - Bundle source code for production, includes css and javascript minification
 
 ### Command simplification:

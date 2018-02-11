@@ -1,5 +1,5 @@
 {
-  "name": "webpack-yarn",
+  "name": "fe-starter",
   "version": "1.0.0",
   "description": "Webpack FrontEnd boilerplate using yarn",
   "main": "index.js",
