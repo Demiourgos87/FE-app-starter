@@ -5,9 +5,7 @@
 // ----- Example:
 // @include fontFace(<font name>, <font path>, <font weight>, normal, <font formats>);
 // Note: The font base url is defined in the fontFace mixin, at src/scss/mixins/_m--font-face
-@include fontFace(Roboto-Light, Roboto-Light, 300, normal, ttf);
 @include fontFace(Roboto-Regular, Roboto-Regular, 400, normal, ttf);
-@include fontFace(Roboto-Medium, Roboto-Medium, 500, normal, ttf);
 @include fontFace(Roboto-Bold, Roboto-Bold, 700, normal, ttf);
 
 // ----- FONT FAMILY VARIBALE
@@ -15,9 +13,7 @@ $fontDefault             : Arial, sans-serif;
 
 // ----- Examples
 // $ff == $font-family
-$ff-main-light            : 'Roboto-Light', $fontDefault;
 $ff-main-regular          : 'Roboto-Regular', $fontDefault;
-$ff-main-medium           : 'Roboto-Medium', $fontDefault;
 $ff-main-bold             : 'Roboto-Bold', $fontDefault;
 
 //----- Font size

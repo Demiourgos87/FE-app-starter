@@ -17,5 +17,6 @@ vendor/
 .settings
 .idea
 
-# build/css/master.css*
-# build/js/master.js*
+# Uncomment lines below when multiple people working on same project
+# dist/css/style.css
+# dist/js/*.js

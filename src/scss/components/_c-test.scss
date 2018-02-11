@@ -1,5 +1,4 @@
 .c-test {
-    font-size: 2.5rem;
-    font-weight: 700;
+    @include font-size(45px,30px,35px);
     color: #ffffff;
 }

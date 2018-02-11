@@ -103,7 +103,7 @@ module.exports = {
             title: 'Webpack App',
             filename: 'index.html',
             template: 'src/index.html',
-            alwaysWriteToDisk: true
+            // alwaysWriteToDisk: true
         }),
         new WebpackBuildNotifierPlugin({
             title: "Webpack",
