@@ -11,7 +11,7 @@ var outputDir = '../dist/',
 
 module.exports = {
     entry: {
-        app: './src/js/app.js'
+        main: './src/main.js'
     },
     output: {
         path: path.resolve(__dirname, outputDir),
@@ -99,7 +99,7 @@ module.exports = {
             minChunks: Infinity
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'app',
+            name: 'main',
             async: 'vendor-async',
             children: true,
             minChunks: 3
