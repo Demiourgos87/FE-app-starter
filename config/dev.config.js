@@ -38,7 +38,8 @@ module.exports = {
                                 sourceMapContents: true
                             }
                         }
-                    ]
+                    ],
+                    publicPath: '../'
                 }))
             },
             // ----- Font loading
