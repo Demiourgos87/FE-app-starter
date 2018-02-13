@@ -9,24 +9,24 @@ Install **yarn:** [Installation instructions](https://yarnpkg.com/en/docs/instal
 * Navigate to project directory and run ```yarn install``` to install required modules
 
 ### Assets folders:
-*Put assets here:*
-* Fonts: *src/assets/fonts/*
-* Images: *src/assets/images/*
+**Put assets here:**
+* Fonts: **src/assets/fonts/**
+* Images: **src/assets/images/**
 
 ### Compilation paths:
-* CSS is bundled to: *dist/css/*
-* Javascript is bundled to: *dist/js/*
+* CSS is bundled to: **dist/css/**
+* Javascript is bundled to: **dist/js/**
 
 ## Project setup
-* Define design specific dimensions variables at *src/scss/variables/_v--dimensions.scss*
-* Adjust variables and mixins to meet the design specifics; for example, if there is no design for tablet, delete the additional argument called in ```font-size-vw()``` in *src/scss/variables/_v--typography.scss* (also delete the additional argument from ```font-size-vw()``` mixin in *src/scss/mixins/_m--font-size.scss*), and delete tablet entries from the font-size and line-height mixins
-* Define fonts and font variables in *src/scss/variables/_v--typography.scss*
-* Adjust base wrappers in *src/scss/layouts/_wrappers.scss*
+* Define design specific dimensions variables at **src/scss/variables/_v--dimensions.scss**
+* Adjust variables and mixins to meet the design specifics; for example, if there is no design for tablet, delete the additional argument called in ```font-size-vw()``` in **src/scss/variables/_v--typography.scss** (also delete the additional argument from ```font-size-vw()``` mixin in **src/scss/mixins/_m--font-size.scss**), and delete tablet entries from the font-size and line-height mixins
+* Define fonts and font variables in **src/scss/variables/_v--typography.scss**
+* Adjust base wrappers in **src/scss/layouts/_wrappers.scss**
 * Code away
 
 #### Important note about paths:
 * For JavaScript, require assets relative to the path of the file you are requiring them from
-* For SCSS, require assets relative to the path of the main _**style.scss**_
+* For SCSS, require assets relative to the path of the main **style.scss**
 
 ### Commands:
 * ```yarn run dev``` - Runs webpack dev server for development mode
