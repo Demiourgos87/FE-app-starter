@@ -2,13 +2,15 @@
 // requires variables/v--colors.scss
 @function colorFunc($colorName, $colorVariant: null) {
 
-    // color variant is optional
-    @if ($colorVariant != null) {
+  // color variant is optional
+  @if ($colorVariant !=null) {
 
-        @return map-get(map-get($colors, $colorName), $colorVariant);
+    @return map-get(map-get($colors, $colorName), $colorVariant);
 
-    } @else {
-        @return map-get($colors, $colorName);
-    }
+  }
+
+  @else {
+    @return map-get($colors, $colorName);
+  }
 
 }

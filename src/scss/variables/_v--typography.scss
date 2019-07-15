@@ -9,34 +9,40 @@
 @include fontFace(Roboto-Bold, Roboto-Bold, 700, normal, ttf);
 
 // ----- FONT FAMILY VARIBALE
-$fontDefault             : Arial, sans-serif;
+$fontDefault : Arial, sans-serif;
 
 // ----- Examples
 // $ff == $font-family
-$ff-main-regular          : 'Roboto-Regular', $fontDefault;
-$ff-main-bold             : 'Roboto-Bold', $fontDefault;
+$ff-main-regular : 'Roboto-Regular',
+$fontDefault;
+$ff-main-bold : 'Roboto-Bold',
+$fontDefault;
 
 //----- Font size
-$font-size-base         : 10px;
+$font-size-base : 10px;
 
 // ----- GLOBAL FONT SETTINGS
 html {
   @include font-size-vw($font-size-base, $font-size-base, $font-size-base);
 }
-body {
-    font-family: $fontDefault;
-    -webkit-font-smoothing: antialiased;
 
-    &.fixed {
-      @include breakpoint(phone) {
-        overflow: hidden;
-      }
+body {
+  font-family: $fontDefault;
+  -webkit-font-smoothing: antialiased;
+
+  &.fixed {
+    @include breakpoint(phone) {
+      overflow: hidden;
     }
+  }
 }
 
 h1 {}
+
 h2 {}
+
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 p {}

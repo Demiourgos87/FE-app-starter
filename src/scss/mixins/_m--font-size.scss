@@ -3,30 +3,36 @@
 // Example @include font-size(10px, 20px, 30px);
 // rem Font Size
 @mixin font-size($fz-phone, $fz-tablet, $fz-desktop) {
-    @include breakpoint(phone) {
-        font-size: cr($fz-phone);
-    }
-    @include breakpoint(overPhone){
-        font-size: cr($fz-tablet);
-    }
-    @include breakpoint(desktop) {
-        font-size: cr($fz-desktop);
-    }
+  @include breakpoint(phone) {
+    font-size: cr($fz-phone);
+  }
+
+  @include breakpoint(overPhone) {
+    font-size: cr($fz-tablet);
+  }
+
+  @include breakpoint(desktop) {
+    font-size: cr($fz-desktop);
+  }
 }
 
 // vw Font Size for HTML
 @mixin font-size-vw($fz-phone, $fz-tablet, $fz-desktop) {
+  font-size: $fz-desktop;
+
+  @include breakpoint(phone) {
+    font-size: cvw($fz-phone, $site-mob-design);
+  }
+
+  @include breakpoint(overPhone) {
+    font-size: cvw($fz-tablet, $site-tab-design);
+  }
+
+  @include breakpoint(desktop) {
+    font-size: cvw($fz-desktop, $site-desk-design);
+  }
+
+  @include breakpoint(overDesign) {
     font-size: $fz-desktop;
-    @include breakpoint(phone) {
-        font-size: cvw($fz-phone, $site-mob-design);
-    }
-    @include breakpoint(overPhone) {
-        font-size: cvw($fz-tablet, $site-tab-design);
-    }
-    @include breakpoint(desktop){
-        font-size: cvw($fz-desktop, $site-desk-design);
-    }
-    @include breakpoint(overDesign) {
-        font-size: $fz-desktop;
-    }
+  }
 }
