@@ -2,7 +2,6 @@ var webpack = require('webpack'),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
     WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
-    HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin'),
     path = require('path');
 
 module.exports = {
@@ -99,12 +98,10 @@ module.exports = {
             filename: 'css/style.css',
             allChunks: true
         }),
-        new HtmlWebpackHarddiskPlugin(),
         new HtmlWebpackPlugin({
             title: 'Webpack App',
             filename: 'index.html',
-            template: 'src/index.html',
-            // alwaysWriteToDisk: true
+            template: 'src/index.html'
         }),
         new WebpackBuildNotifierPlugin({
             title: "Webpack",
