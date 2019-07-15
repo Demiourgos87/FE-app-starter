@@ -1,8 +1,8 @@
 # FE boilerplate using Webpack and yarn
 
 ## Usage  
-Install webpack cli globally on your machine ```npm install -g webpack``` (on Linux, may require ```sudo```)  
 Install **yarn:** [Installation instructions](https://yarnpkg.com/en/docs/install)
+Install webpack cli globally on your machine ```yarn add global webpack webpack-cli``` (on Linux, may require ```sudo```)  
 
 ## Development setup
 * Clone the repository ```git clone <repo url>```
