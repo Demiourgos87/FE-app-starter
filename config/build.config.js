@@ -1,13 +1,12 @@
-var webpack = require('webpack'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    CleanWebpackPlugin = require('clean-webpack-plugin'),
-    path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 // ----- Output file paths
-var outputDir = '../dist/',
-    cssOutput = 'css/style.[chunkhash:8].css',
-    jsOutput = 'js/[name].[chunkhash:8].bundle.js';
+const outputDir = '../dist/'
+const cssOutput = 'css/style.[chunkhash:8].css'
+const jsOutput = 'js/[name].[chunkhash:8].bundle.js'
 
 module.exports = {
     entry: {
@@ -17,6 +16,7 @@ module.exports = {
         path: path.resolve(__dirname, outputDir),
         filename: jsOutput
     },
+    mode: 'production',
     module: {
         rules: [
             {
@@ -88,33 +88,21 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'async',
+            minSize: 30000,
+            maxSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            automaticNameMaxLength: 30,
+            name: true
+        }
+    },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks(module) {
-                // any required modules inside node_modules are extracted to vendor
-                return (
-                    module.resource &&
-                    /\.js$/.test(module.resource) &&
-                    module.resource.indexOf(
-                        path.join(__dirname, '../node_modules')
-                    ) === 0
-                )
-            }
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest',
-            minChunks: Infinity
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'main',
-            async: 'vendor-async',
-            children: true,
-            minChunks: 3
-        }),
-        new CleanWebpackPlugin(['dist/*'], {
-            root: path.resolve(__dirname + '/../')
-        }),
+        new CleanWebpackPlugin(),
         new ExtractTextPlugin(cssOutput),
         new HtmlWebpackPlugin({
             title: 'Webpack App',
